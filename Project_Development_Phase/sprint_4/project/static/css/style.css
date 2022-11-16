@@ -27,6 +27,22 @@ body {
     top: 30px;
 }
 
+.row3 ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.row3 li a {
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    float: right;
+    text-decoration: none;
+    font-style: normal;
+    padding-right: 20px;
+}
+  
 main div.column input {
     display: block;
     position: relative;
