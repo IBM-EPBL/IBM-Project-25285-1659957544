@@ -6,6 +6,12 @@ model = pickle.load(open('wqi.pkl','rb'))
 @app.route('/')
 def home():
     return render_template("web.html")
+@app.route('/about')
+def about():
+    return render_template("about.html")
+@app.route('/info')
+def info():
+    return render_template("info.html")
 @app.route('/login' ,methods = ['POST'])
 def login():
     year = request.form["year"]
@@ -15,7 +21,7 @@ def login():
     bod = request.form["bod"]
     na = request.form["na"]
     tc = request.form["tc"]
-    total = [[float(year),float (do), float (ph), float (co), float (bod), float (na), float(tc)]]
+    total = [[float (do), float (ph), float (co), float (bod), float (na), float(tc)]]
     y_pred = model.predict(total)
     y_pred = y_pred[[0]]
     if(y_pred >= 95 and y_pred<= 100) :
